@@ -1,0 +1,35 @@
+.terminal {
+  background-color: #0f0f0f;
+  color: #33ff33;
+  font-family: 'Courier New', monospace;
+  height: 100vh;
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.output {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.message {
+  white-space: pre-wrap;
+}
+
+.inputForm {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  flex-grow: 1;
+  background-color: transparent;
+  border: none;
+  color: #33ff33;
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+}
