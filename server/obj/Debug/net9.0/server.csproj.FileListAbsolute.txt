@@ -26,3 +26,13 @@ C:\Users\khang\Terminal42\server\obj\Debug\net9.0\refint\server.dll
 C:\Users\khang\Terminal42\server\obj\Debug\net9.0\server.pdb
 C:\Users\khang\Terminal42\server\obj\Debug\net9.0\server.genruntimeconfig.cache
 C:\Users\khang\Terminal42\server\obj\Debug\net9.0\ref\server.dll
+C:\Users\khang\Terminal42\server\bin\Debug\net9.0\DnsClient.dll
+C:\Users\khang\Terminal42\server\bin\Debug\net9.0\MongoDB.Bson.dll
+C:\Users\khang\Terminal42\server\bin\Debug\net9.0\MongoDB.Driver.dll
+C:\Users\khang\Terminal42\server\bin\Debug\net9.0\SharpCompress.dll
+C:\Users\khang\Terminal42\server\bin\Debug\net9.0\Snappier.dll
+C:\Users\khang\Terminal42\server\bin\Debug\net9.0\ZstdSharp.dll
+C:\Users\khang\Terminal42\server\obj\Debug\net9.0\server.sourcelink.json
+C:\Users\khang\Terminal42\server\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\khang\Terminal42\server\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\khang\Terminal42\server\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
