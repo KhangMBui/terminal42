@@ -36,3 +36,5 @@ C:\Users\khang\Terminal42\server\obj\Debug\net9.0\server.sourcelink.json
 C:\Users\khang\Terminal42\server\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\khang\Terminal42\server\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\khang\Terminal42\server\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\khang\Terminal42\server\bin\Debug\net9.0\DotNetEnv.dll
+C:\Users\khang\Terminal42\server\bin\Debug\net9.0\Sprache.dll

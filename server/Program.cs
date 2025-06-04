@@ -1,6 +1,8 @@
 using MongoDB.Driver;
 using Terminal42.Models;
 
+DotNetEnv.Env.Load();
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Configure MongoDBSettings using appsettings.json
