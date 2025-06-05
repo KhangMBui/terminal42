@@ -21,5 +21,13 @@ namespace Terminal42.Controllers
       var users = await _user.GetAllUsersAsync();
       return users;
     }
+
+    [HttpGet("{userId}")]
+    public async Task<ActionResult<User>> GetUserByUserId(string userId)
+    {
+      var user = await _user.GetUserByIdAsync(userId);
+      if (user == null) return NotFound();
+      return user;
+    }
   }
 }

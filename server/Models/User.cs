@@ -8,7 +8,10 @@ namespace Terminal42.Models
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
     public required string Id { get; set; }
-    
+
+    [BsonElement("userId")]
+    public string? UserId { get; set; }
+
     [BsonElement("username")]
     public required string Username { get; set; }
 
