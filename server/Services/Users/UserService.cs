@@ -29,10 +29,10 @@ namespace Terminal42.Services.Users
     // {
       
     // }
-    // public Task<bool> DeleteUserAsync(string id)
-    // {
-      
-    // }
+    public async Task<bool> DeleteUserAsync(string id)
+    {
+      return await _repo.DeleteUserAsync(id);
+    }
     
   }
 }

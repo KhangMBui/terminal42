@@ -9,6 +9,6 @@ namespace Terminal42.Services.Users
     Task<User?> GetUserByIdAsync(string id);
     Task<User> CreateUserAsync(CreateUserRequest request);
     // Task<User> UpdateUserAsync(string id, UpdateUserRequest request);
-    // Task<bool> DeleteUserAsync(string id);
+    Task<bool> DeleteUserAsync(string id);
   }
 }

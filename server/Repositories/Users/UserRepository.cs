@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http.HttpResults;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using Terminal42.DTOs.Users;
@@ -68,6 +69,15 @@ namespace Terminal42.Repositories.Users
 
       // Return the new user's UserId
       return user;
+    }
+
+    public async Task<bool> DeleteUserAsync(string id)
+    {
+      var existing = await _users.Find(u => u.UserId == id).FirstOrDefaultAsync();
+      if (existing == null) throw new Exception("User not found");
+
+      var response = await _users.DeleteOneAsync(u => u.UserId == id);
+      return response.DeletedCount > 0;
     }
   }
 }

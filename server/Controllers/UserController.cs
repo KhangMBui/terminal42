@@ -36,5 +36,15 @@ namespace Terminal42.Controllers
     {
       return await _user.CreateUserAsync(createUserRequestDto);
     }
+
+    [HttpDelete("{userId}")]
+    public async Task<ActionResult<string>> DeleteUserById(string userId)
+    {
+      bool isDeleted = await _user.DeleteUserAsync(userId);
+      if (isDeleted)
+          return Ok($"Deleted successfully user with id {userId}");
+      else
+          return NotFound("Deleted unsuccessfully");
+    }
   }
 }
