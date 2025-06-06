@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Terminal42.DTOs.Users;
 using Terminal42.Models;
 using Terminal42.Services.Users;
 
@@ -28,6 +29,12 @@ namespace Terminal42.Controllers
       var user = await _user.GetUserByIdAsync(userId);
       if (user == null) return NotFound();
       return user;
+    }
+
+    [HttpPost("")]
+    public async Task<User> CreateUser(CreateUserRequest createUserRequestDto)
+    {
+      return await _user.CreateUserAsync(createUserRequestDto);
     }
   }
 }

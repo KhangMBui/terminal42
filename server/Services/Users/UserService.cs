@@ -21,10 +21,10 @@ namespace Terminal42.Services.Users
     {
       return await _repo.GetByUserIdAsync(userId);
     }
-    // public Task<User> CreateUserAsync(CreateUserRequest request)
-    // {
-      
-    // }
+    public async Task<User> CreateUserAsync(CreateUserRequest request)
+    {
+      return await _repo.CreateUserAsync(request);
+    }
     // public Task<User> UpdateUserAsync(string id, UpdateUserRequest request)
     // {
       
