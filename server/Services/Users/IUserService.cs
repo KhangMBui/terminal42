@@ -8,7 +8,7 @@ namespace Terminal42.Services.Users
     Task<IEnumerable<User>> GetAllUsersAsync();
     Task<User?> GetUserByIdAsync(string id);
     Task<User> CreateUserAsync(CreateUserRequest request);
-    // Task<User> UpdateUserAsync(string id, UpdateUserRequest request);
+    Task<User> UpdateUserAsync(string id, UpdateUserRequest request);
     Task<bool> DeleteUserAsync(string id);
   }
 }

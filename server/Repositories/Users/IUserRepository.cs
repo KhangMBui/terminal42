@@ -7,8 +7,9 @@ namespace Terminal42.Repositories.Users
   {
     Task<User> CreateUserAsync(CreateUserRequest req);
     Task<IEnumerable<User>> GetAllAsync();
-    Task<User> GetByUserIdAsync(string userId);
+    Task<User> GetUserByIdAsync(string userId);
     Task<User> GetByEmailAsync(string email);
+    Task<User> UpdateUserAsync(string id, UpdateUserRequest req);
     Task CreateAsync(User user);
     Task<bool> DeleteUserAsync(string id);
   }

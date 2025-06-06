@@ -35,7 +35,7 @@ namespace Terminal42.Repositories.Users
       await _users.Find(_ => true).ToListAsync();
 
 
-    public async Task<User> GetByUserIdAsync(string userId) => await _users.Find(u => u.UserId == userId).FirstOrDefaultAsync();
+    public async Task<User> GetUserByIdAsync(string userId) => await _users.Find(u => u.UserId == userId).FirstOrDefaultAsync();
 
     public async Task<User> GetByEmailAsync(string email) =>
       await _users.Find(u => u.Email == email).FirstOrDefaultAsync();
@@ -69,6 +69,26 @@ namespace Terminal42.Repositories.Users
 
       // Return the new user's UserId
       return user;
+    }
+
+    public async Task<User> UpdateUserAsync(string id, UpdateUserRequest req)
+    {
+      var existing = await _users.Find(u => u.UserId == id).FirstOrDefaultAsync();
+      if (existing == null) throw new Exception("User not found");
+
+      // Update username
+      var update = Builders<User>.Update.Set(u => u.Username, req.Username);
+
+      // Only update password if provided in dto
+      if (!string.IsNullOrEmpty(req.Password))
+      {
+        var hashed = BCrypt.Net.BCrypt.HashPassword(req.Password);
+        update = update.Set(u => u.PasswordHash, hashed);
+      }
+
+      await _users.UpdateOneAsync(u => u.UserId == id, update);
+      
+      return await _users.Find(u => u.UserId == id).FirstOrDefaultAsync();
     }
 
     public async Task<bool> DeleteUserAsync(string id)
