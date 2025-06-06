@@ -19,20 +19,20 @@ namespace Terminal42.Services.Users
     }
     public async Task<User?> GetUserByIdAsync(string userId)
     {
-      return await _repo.GetByUserIdAsync(userId);
+      return await _repo.GetUserByIdAsync(userId);
     }
-    // public Task<User> CreateUserAsync(CreateUserRequest request)
-    // {
-      
-    // }
-    // public Task<User> UpdateUserAsync(string id, UpdateUserRequest request)
-    // {
-      
-    // }
-    // public Task<bool> DeleteUserAsync(string id)
-    // {
-      
-    // }
+    public async Task<User> CreateUserAsync(CreateUserRequest request)
+    {
+      return await _repo.CreateUserAsync(request);
+    }
+    public async Task<User> UpdateUserAsync(string id, UpdateUserRequest request)
+    {
+      return await _repo.UpdateUserAsync(id, request);
+    }
+    public async Task<bool> DeleteUserAsync(string id)
+    {
+      return await _repo.DeleteUserAsync(id);
+    }
     
   }
 }
