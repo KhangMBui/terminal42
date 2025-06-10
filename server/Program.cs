@@ -3,10 +3,13 @@ using Terminal42.Models;
 using Terminal42.Services.Auth;
 using Terminal42.Repositories.Users;
 using Terminal42.Services.Users;
+using Terminal42.Hubs;
 
 DotNetEnv.Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddSignalR();
 
 // Configure MongoDBSettings using appsettings.json
 builder.Services.Configure<MongoDBSettings>(builder.Configuration.GetSection("MongoDB"));
@@ -34,7 +37,22 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
+// Configure CORS:
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials()
+            .WithOrigins("http://localhost:5173"); // Frontend server port
+    });
+});
+
 var app = builder.Build();
+
+app.UseCors();
 
 
 // Configure the HTTP request pipeline.
@@ -66,6 +84,7 @@ app.MapGet(
     }
 );
 
+app.MapHub<ChatHub>("/hubs/chat");
 app.MapControllers();
 app.Run();
 
