@@ -47,3 +47,6 @@ C:\Users\khang\Terminal42\server\bin\Debug\net9.0\Microsoft.IdentityModel.Protoc
 C:\Users\khang\Terminal42\server\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\khang\Terminal42\server\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\khang\Terminal42\server\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\khang\Terminal42\server\bin\Debug\net9.0\server.staticwebassets.runtime.json
+C:\Users\khang\Terminal42\server\bin\Debug\net9.0\Newtonsoft.Json.dll
+C:\Users\khang\Terminal42\server\bin\Debug\net9.0\System.Net.WebSockets.WebSocketProtocol.dll
